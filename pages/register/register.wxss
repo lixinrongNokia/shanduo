@@ -1,0 +1,54 @@
+/*register.wxss*/
+
+/*.header里所有view里所有image*/
+
+.header>view>image {
+  width: 50rpx;
+  height: 50rpx;
+}
+
+/*用户名*/
+
+.footer>.footer_name>view {
+  position: relative;
+}
+
+.footer>.footer_name>view>button {
+  position: absolute;
+  top: 50rpx;
+  right: -180rpx;
+  z-index: 100;
+  border-radius: 30rpx;
+  width: 140rpx;
+  height: 50rpx;
+  line-height: 50rpx;
+  margin-left: 40rpx;
+  font-size: 20rpx;
+  padding: 0 10rpx;
+  background-color: #6980FF;
+}
+
+/*.footer里所有view里所有view里所有input*/
+
+.footer>view>view>input {
+  vertical-align: middle;
+}
+
+/*input前面的图片*/
+
+.footer>view>image {
+  vertical-align: middle;
+}
+
+.footer>.footer_test{
+  border-bottom:1rpx solid #eaeaea;
+  background-color:#fff;
+  height:150rpx;
+  width:600rpx;
+  margin:0 auto;
+  text-align:left;
+}
+/*input提示文字*/
+.psection {
+  font-size: 26rpx;
+}

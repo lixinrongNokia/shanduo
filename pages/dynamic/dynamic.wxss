@@ -1,0 +1,51 @@
+.nearby {
+  padding: 0;
+}
+.pl_area>.area_top {
+  width: 100%;
+  height: 60rpx;
+  line-height: 60rpx;
+  padding-left: 30rpx;
+  border-bottom: 1rpx solid #eaeaea;
+}
+
+/*评论楼*/
+
+.area_content>.area_user>view>view:nth-child(3) {
+  padding: 25rpx;
+  background-color: rgba(70, 96, 255, 0.1);
+}
+
+.area_content>.area_user>view>view:nth-child(3)>view {
+  width: 100%;
+  max-height: 465rpx;
+  word-break: break-all;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.area_content>.area_user>view>view:nth-child(3) .txt_title {
+  color: rgb(70, 96, 255);
+}
+
+.area_content>.area_user>view>view:nth-child(3)>view>.txt_floor {
+  color: #999;
+  font-size: 26rpx;
+  margin-left: 2%;
+}
+
+/*评论*/
+
+.area_user>view>view:nth-child(2) {
+  margin-bottom: 15rpx;
+}
+
+/*发言时间*/
+
+.area_content>.area_user>view>view:nth-child(4)>text {
+  color: #999;
+}
+
+.area_content>.area_user>view>view:nth-child(4)>text:nth-child(2) {
+  margin-left: 5%;
+}

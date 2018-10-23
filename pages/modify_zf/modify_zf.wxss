@@ -1,0 +1,79 @@
+/* pages/modify_zf/modify_zf.wxss */
+page .wallets-password .input-content-wrap .top {
+  display: flex;
+  align-items: center;
+  height: 70rpx;
+  justify-content: space-around;
+  padding-top: 100rpx;
+  border-top: 3px solid #f7f8ff;
+}
+page .wallets-password .input-content-wrap .top .txt{
+  color: #333;
+  font-size: 34rpx;
+}
+page .wallets-password .input-content-wrap .actual_fee {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 70rpx;
+}
+
+page .wallets-password .input-content-wrap .actual_fee text {
+  color: #999;
+  font-size: 30rpx;
+}
+
+page .wallets-password .input-content-wrap .input-password-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 150rpx;
+}
+
+page .wallets-password .input-content-wrap .input-password-wrap .password_dot {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: #000;
+  box-sizing: border-box;
+  width: 80rpx;
+  height: 80rpx;
+  border: 1px solid #ddd;
+  margin-right: 10rpx;
+}
+
+page .wallets-password .input-content-wrap .input-password-wrap .password_dot:last-child {
+  margin: 0;
+}
+
+page .wallets-password .input-content-wrap .input-password-wrap .password_dot text {
+  background: #000;
+  border-radius: 50%;
+  width: 20rpx;
+  height: 20rpx;
+}
+
+page .wallets-password .input-content {
+  position: absolute;
+  opacity: 0;
+  left: -100%;
+  top: 600rpx;
+  background: #f56;
+  z-index: -999;
+}
+
+page .wallets-password .input-content.active {
+  z-index: -99;
+}
+page .wallets-password .button-content{
+  width: 60%;
+  height: 80rpx;
+  line-height: 80rpx;
+  border-radius: 50rpx;
+  border: 0;
+  background-color: #3D59FF;
+  color: #fff;
+  font-size: 34rpx;
+  margin-top: 120rpx;
+}

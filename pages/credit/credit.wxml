@@ -1,0 +1,144 @@
+<!--pages/credit/credit.wxml-->
+<view>
+  <view class='pic_box'>
+    <view class='pic_box_content'>
+      <image src='{{host}}/picture/{{bodyInfo.head_portrait_id}}'></image>
+      <text>{{bodyInfo.reputation}}</text>
+      <text>{{bodyInfo.level}}</text>
+    </view>
+  </view>
+  <view class='credit_body'>
+    <scroll-view scroll-x="true" class="bodyTag inline" scroll-left="{{scrollLeft}}">
+      <view class='Tag_edge inline'>
+        <text class="{{currentTab==0 ? 'userLi_actived ' : ''}}" data-current="0" bindtap="swichNav">发布</text>
+      </view>
+      <view class='Tag_edge inline'>
+        <text class="{{currentTab==1 ? 'userLi_actived ' : ''}}" data-current="1" bindtap="swichNav">参加</text>
+      </view>
+    </scroll-view>
+    <swiper class="tab-content" current="{{currentTab}}" duration="300" bindchange="switchTab">
+      <swiper-item>
+        <scroll-view scroll-y="{{true}}" class='scoll-h'>
+          <block wx:for='{{crediPoints[0].arrayResult}}' wx:key="navItems" wx:for-item="item" wx:for-index="idx">
+            <view class='fq_pjr_leader'>
+              <view class='inline'>
+                <image src='{{host}}/picture/{{item.head_portrait_id}}'></image>
+                <view class='inline'>
+                  <text class='block'>{{item.user_name}}</text>
+                  <!--判断男女是男加 sex_nan    加在sex 后面-->
+                  <text class='sex'><text class='sex_on' wx:if='{{item.gender=="1"}}'>♂</text>
+                  <text class='sex_on' wx:else>♀</text>24</text>
+                  <!--判断是什么会员 my_VIP-->
+                  <block wx:if='{{item.vipGrade>0}}'>
+                    <text class='level'>SVIP9</text>
+                  </block>
+                </view>
+              </view>
+              <view class='inline'>
+                <view>
+                  <view class='inline'>
+                    <text>主题:</text>
+                    <text>{{item.activity_name}}</text>
+                  </view>
+                  <view class='inline'>
+                    <text>{{item.mode}}</text>
+                  </view>
+                </view>
+              </view>
+            </view>
+            <view>
+              <block wx:for='{{item.scoreList}}' wx:key="scoreItems" wx:for-item="scoreItem">
+                <view class='fq_pjr_ul'>
+                  <view class='fq_pjr_li'>
+                    <image src='{{host}}/picture/{{scoreItem.head_portrait_id}}'></image>
+                    <view class='inline'>
+                      <view>
+                        <text>{{scoreItem.user_name}}</text>
+                        <block wx:if='{{scoreItem.score}}'>
+                          <block wx:for="{{scoreItem.score}}" wx:key="index">
+                            <image class='pj_aix' src='/image/icon/fabulous_2.png'></image>
+                          </block>
+                        </block>
+                        <!-- <block wx:for="{{scoreItem.others_score}}" wx:key="index">
+                            <image class='pj_aix' src='/image/icon/fabulous_2_1.png'></image>
+                          </block> -->
+                      </view>
+                      <view>
+                        <text class='col_hui'></text>
+                      </view>
+                    </view>
+                  </view>
+                  <view class='fq_cypj_li'>
+                    <text wx:if='{{scoreItem.evaluation_content}}'>{{scoreItem.evaluation_content}}</text>
+                    <text wx:else>没有评论</text>
+                  </view>
+                </view>
+              </block>
+            </view>
+          </block>
+          <view wx:if='{{crediPoints[0].arrayResult.length==0}}'>没有发布过活动</view>
+        </scroll-view>
+      </swiper-item>
+      <swiper-item>
+        <scroll-view scroll-y="{{true}}" class='scoll-h'>
+          <block wx:for='{{crediPoints[1].arrayResult}}' wx:key="navItems" wx:for-item="item" wx:for-index="idx">
+            <view class='fq_pjr_leader'>
+              <view class='inline'>
+                <image src='{{host}}/picture/{{item.head_portrait_id}}'></image>
+                <view class='inline'>
+                  <text class='block'>{{item.user_name}}</text>
+                  <!--判断男女是男加 sex_nan    加在sex 后面-->
+                  <text class='sex'><text class='sex_on' wx:if='{{item.gender=="1"}}'>♂</text>
+                  <text class='sex_on' wx:else>♀</text>24</text>
+                  <!--判断是什么会员 my_VIP-->
+                  <text class='level'>SVIP9</text>
+                </view>
+              </view>
+              <view class='inline'>
+                <view>
+                  <view class='inline'>
+                    <text>主题:</text>
+                    <text>{{item.activity_name}}</text>
+                  </view>
+                  <view class='inline'>
+                    <text>{{item.mode}}</text>
+                  </view>
+                </view>
+              </view>
+            </view>
+            <view>
+              <block wx:for='{{item.scoreList}}' wx:key="scoreItems" wx:for-item="scoreItem" wx:for-index="idy">
+                <view class='fq_pjr_ul'>
+                  <view class='fq_pjr_li'>
+                    <image src='{{host}}/picture/{{scoreItem.head_portrait_id}}'></image>
+                    <view class='inline'>
+                      <view>
+                        <text>{{scoreItem.user_name}}</text>
+                        <block wx:if='{{scoreItem.score}}'>
+                          <block wx:for="{{scoreItem.score}}" wx:key="index">
+                            <image class='pj_aix' src='/image/icon/fabulous_2.png'></image>
+                          </block>
+                        </block>
+                        <!-- <block wx:for="{{scoreItem.others_score}}" wx:key="index">
+                          <image class='pj_aix' src='/image/icon/fabulous_2_1.png'></image>
+                        </block> -->
+                      </view>
+                      <view>
+                        <text class='col_hui'></text>
+                      </view>
+                    </view>
+                  </view>
+                  <view class='fq_cypj_li'>
+                    <text wx:if='{{scoreItem.evaluation_content}}'>{{scoreItem.evaluation_content}}</text>
+                    <text wx:else>没有评论</text>
+                  </view>
+                </view>
+              </block>
+            </view>
+          </block>
+          <view wx:if='{{crediPoints[1].arrayResult.length==0}}'>没有参加过活动</view>
+        </scroll-view>
+      </swiper-item>
+    </swiper>
+  </view>
+</view>

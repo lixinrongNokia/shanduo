@@ -1,0 +1,50 @@
+/*load.wxss*/
+/*.header里所有view里所有image*/
+
+.header>view>image {
+  width: 60rpx;
+  height: 60rpx;
+}
+
+/*页眉里的右边的view*/
+
+.header_right {
+  text-align: right;
+}
+
+/*去注册文字*/
+
+.header_right>text {
+  vertical-align: middle;
+  font-size: 30rpx;
+  color: #fff;
+  padding-right: 30rpx;
+}
+
+/*input提示文字*/
+.psection {
+  font-size: 26rpx;
+}
+.footer>view{
+  width: 100%;
+}
+
+/*找回*/
+.footer>.footer_text>text {
+  font-size: 26rpx;
+  color: #fff;
+  text-decoration: underline;
+}
+
+/*注册/找回里的文字*/
+
+.footer>.footer_text>view>text {
+  color: #999;
+  font-size: 20rpx;
+}
+
+/*忘记密码对齐上方的input*/
+
+.footer>.footer_text>.footer_text_left>text {
+  margin-left: 48%;
+}

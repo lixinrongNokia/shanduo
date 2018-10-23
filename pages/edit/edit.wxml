@@ -1,0 +1,102 @@
+<!--pages/edit/edit.wxml-->
+<view>
+  <view class='pic_box'>
+    <view class='pic_box_content'>
+      <image src='{{userInfo.picture}}'></image>
+      <text></text>
+      <view class='pic_box_img'>
+        <image src='/image/icon/photo.png'></image>
+        <text bindtap='chooseImage'>更换头像</text>
+      </view>
+    </view>
+    <image src='#' style='background:red;'></image>
+  </view>
+  <view class='edit_body'>
+    <view class='edit_title'>
+      <text>基本资料</text>
+    </view>
+    <view class='edit_option'>
+      <text>闪多号</text>
+      <view name='payment' class='inline'>
+        <text>{{userInfo.userId}}</text>
+        <image src='/image/icon/icon-0.png'></image>
+      </view>
+    </view>
+    <view class='edit_option' bindtap='gotoNick_editView'>
+      <text>昵称</text>
+      <view name='payment' class='inline'>
+        <text>{{userInfo.name}}</text>
+        <image src='/image/icon/icon-0.png'></image>
+      </view>
+    </view>
+    <view class='edit_option'>
+      <text>性别</text>
+      <picker name='payment' class='inline' value="{{genderIndex}}" range="{{gender}}" bindchange='selectGender'>
+        <view>
+          <text wx:if='{{genderIndex}}'>{{gender[genderIndex]}}</text>
+          <text wx:else>女</text>
+          <image src='/image/icon/icon-0.png'></image>
+        </view>
+      </picker>
+    </view>
+    <view class='edit_option'>
+      <text>出生日期</text>
+      <picker name='payment' class='inline' mode='date' bindchange='selectBirthday'>
+        <view>
+          <text>{{userInfo.birthday}}</text>
+          <image src='/image/icon/icon-0.png'></image>
+        </view>
+      </picker>
+    </view>
+    <view class='edit_option'>
+      <text>情感状态</text>
+      <picker name='payment' class='inline' value="{{tmpUserInfo.emotion}}" range="{{affectiveState}}" bindchange='selectAffective'>
+        <view>
+          <text wx:if='{{tmpUserInfo.emotion}}'>{{affectiveState[tmpUserInfo.emotion]}}</text>
+          <text wx:else>{{affectiveState[userInfo.emotion]}}</text>
+          <image src='/image/icon/icon-0.png'></image>
+        </view>
+      </picker>
+    </view>
+    <view class='edit_title'>
+      <text>个人信息</text>
+    </view>
+    <view class='edit_option' bindtap='gotoEditSignatureView'>
+      <text>个性签名</text>
+      <view name='payment' class='inline'>
+        <text>心有猛虎</text>
+        <image src='/image/icon/icon-0.png'></image>
+      </view>
+    </view>
+    <view class='edit_option'>
+      <text>家乡</text>
+      <picker name='payment' class='inline' mode="region" bindchange="bindRegionChange" value="{{region}}" custom-item="{{customItem}}">
+        <view>
+          <text>当前选择：{{region[0]}}，{{region[1]}}，{{region[2]}}</text>
+          <image src='/image/icon/icon-0.png'></image>
+        </view>
+      </picker>
+    </view>
+    <view class='edit_option'>
+      <text>职业</text>
+      <picker name='payment' class='inline' value="{{professionIndex}}" range="{{profession}}" bindchange='selectProfession'>
+        <view>
+          <text wx:if='{{tmpUserInfo.occupation}}'>{{profession[professionIndex]}}</text>
+          <text wx:elif='{{userInfo.occupation}}'>{{userInfo.occupation}}</text>
+          <text wx:else>请选择职业</text>
+          <image src='/image/icon/icon-0.png'></image>
+        </view>
+      </picker>
+    </view>
+    <!-- <view class='edit_option'>
+      <text>学校</text>
+      <picker name='payment' class='inline' value="{{modesIndex}}" range="{{modes}}" bindchange='selectMode'>
+        <view>
+          <text wx:if='{{modesIndex}}'>{{modes[modesIndex]}}</text>
+          <text wx:else></text>
+          <image src='/image/icon/icon-0.png'></image>
+        </view>
+      </picker>
+    </view> -->
+  </view>
+</view>

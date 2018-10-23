@@ -1,0 +1,127 @@
+<!--pages/signup/signup.wxml-->
+<view>
+  <view class='signup_header'>
+    <view class='release_header'>
+      <image class='left_text inline'></image>
+      <text class='center_text inline'>报名</text>
+      <image src='/image/icon/copy.png' class='right_text inline'></image>
+    </view>
+  </view>
+  <view class="item-ans">
+    <view class='activity_block'>
+      <view class='activity_people'>
+        <image class="img" src="{{host}}/picture/{{activity.headPortraitId}}"></image>
+        <view class="expertInfo inline">
+          <view class="name">{{activity.userName}}</view>
+          <view class="tag">
+            <!--判断男女是男加 sex_nan    加在sex 后面-->
+            <text class='sex'><text class='sex_on' wx:if='{{activity.gender=="1"}}'>♂</text>
+            <text class='sex_on' wx:else>♀</text>{{activity.age}}</text>
+
+            <!--判断是什么会员 -->
+            <block wx:if='{{activity.vipGrade>0}}'>
+              <text class='level'>SVIP9</text>
+              <text class='my_VIP'>VIP7</text>
+              <text class='my_DJ'>LV90</text>
+            </block>
+          </view>
+        </view>
+      </view>
+      <view class='activity_time'>
+        <view class=''>
+          <text class='block col_lan'>{{activity.activityStartTime}}</text>
+          <text class='block col_hui'></text>
+          <text class='block col_hui'>报名截止:{{activity.activityCutoffTime}}</text>
+        </view>
+      </view>
+    </view>
+    <view class='activity_block'>
+      <view class='activity_theme'>
+        <text>主题：</text>
+        <text>{{activity.activityName}}</text>
+        <text class='inline text_koge'></text>
+        <text>{{activity.mode}}</text>
+      </view>
+      <view class='activity_place'>
+        <text>活动地点：</text>
+        <text>{{activity.activityAddress}}</text>
+        <image src='/image/icon/location.png'></image>
+        <text class='col_lan'>{{activity.location}}km</text>
+      </view>
+      <view class='activity_content'>
+        <text>活动内容：</text>
+        <text>{{activity.remarks}}</text>
+      </view>
+    </view>
+    <view class='activity_block'>
+      <view>
+        <view class='inline'>
+          <image src='/image/icon/nan.png'></image>
+          <text>{{activity.manNumber}}</text>
+        </view>
+        <view class='inline'>
+          <image src='/image/icon/nv.png'></image>
+          <text>{{activity.womanNumber}}</text>
+        </view>
+      </view>
+    </view>
+    <!--判断当前弹出框是否隐藏  -->
+    <view class='sare_frame' wx:if='{{false}}'>
+      <view class='share'>
+        <view class='inline'>
+          <image src='/image/icon/copy_1.png'></image>
+          <text>闪多好友</text>
+        </view>
+        <view class='inline'>
+          <image src='/image/icon/copy_2.png'></image>
+          <text>微信好友</text>
+        </view>
+        <view class='inline'>
+          <image src='/image/icon/copy_3.png'></image>
+          <text>朋友圈</text>
+        </view>
+        <view class='inline'>
+          <image src='/image/icon/copy_4.png'></image>
+          <text>QQ好友</text>
+        </view>
+        <view class='inline'>
+          <image src='/image/icon/copy_5.png'></image>
+          <text>QQ空间</text>
+        </view>
+        <view class='inline'>
+          <image src='/image/icon/copy_6.png'></image>
+          <text>微博</text>
+        </view>
+        <view class='inline'>
+          <image src='/image/icon/copy_7.png'></image>
+          <text>举报</text>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view>
+    <text class='block text_title_left'>报名成员</text>
+    <scroll-view scroll-x="true">
+      <view class="signup_personnel">
+        <block wx:for="{{participant}}" wx:key="navItems" wx:for-item="item" wx:for-index="idx">
+          <view>
+            <image src='{{host}}/picture/{{item.head_portrait_id}}' class='block'></image>
+            <text class='block'>{{item.user_name}}</text>
+          </view>
+        </block>
+      </view>
+    </scroll-view>
+  </view>
+  <view class='information_footer'>
+    <view>
+      <view>
+        <block wx:if='{{joinActivity}}'>
+          <text class='inline text_footer_right' bindtap='confirmation'>取消报名</text>
+        </block>
+        <block wx:else>
+          <text class='inline text_footer_right' bindtap='confirmation'>确认报名</text>
+        </block>
+      </view>
+    </view>
+  </view>
+</view>

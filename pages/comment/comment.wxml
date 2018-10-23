@@ -1,0 +1,39 @@
+<view class='container'>
+  <form bindsubmit=''>
+    <view class='comment_header'>
+      <image src='/image/icon/return_1.png'></image>
+      <text>{{secondComments.length}}条回复</text>
+    </view>
+    <view class='comment_body'>
+    <block wx:for="{{ secondComments }}" wx:key="navItems"  wx:for-item="item" wx:for-index="idx">
+      <view class='area_user'>
+        <image src='{{host}}/picture/{{item.portraitId}}'></image>
+        <view class='inline'>
+          <view>
+            <text>{{item.userName}}</text>
+          </view>
+          <view>
+            <text class='txt_cl'>{{item.createDate}}</text>
+          </view>
+          <view>
+            <!--判断是否是回复别人  -->
+              <text class='txt_cl'>回复 </text>
+              <text class='aite'>@{{item.replyName}}</text>
+              <text>:</text>
+            <text>{{item.comment}}</text>
+          </view>
+        </view>
+      </view>
+    </block>
+    </view>
+    <view class='comment_footer area_speak'>
+      <view>
+        <view>
+          <input placeholder="说点啥..." value='{{comments}}' bindinput='inputSecondComments'></input>
+              <button size='mini' type='warn' form-type='submit' bindtap='sendSecondComments'>发送</button>
+        </view>
+        <image src='/image/icon/laugh.png'></image>
+      </view>
+    </view>
+  </form>
+</view>

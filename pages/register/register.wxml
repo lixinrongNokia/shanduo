@@ -1,0 +1,40 @@
+<!--register.wxml-->
+<view class="container">
+  <form form-type='submit'>
+    <view class='header'>
+      <view class='header_left'>
+        <image bindtap='onTap' src='/image/icon/return_1_1.png'></image>
+      </view>
+    </view>
+    <view class='article'>
+      <image src='/image/icon/portrait.png'></image>
+    </view>
+    <view class='footer'>
+      <view class='footer_name'>
+        <image src='/image/icon/icon_name_checked.png'></image>
+        <view>
+          <input type='number' name='uname' placeholder="请输入手机号" placeholder-class="psection" bindinput='inputPhone'></input>
+          <button disabled='{{disabled}}' size='mini' type='warn' bindtap='sendMSM'>{{hint}}</button>
+        </view>
+      </view>
+      <view class='footer_test'>
+        <image src='/image/icon/icon_code_checked.png'></image>
+        <view>
+          <input type='number' name='test' placeholder="请输入六位验证码" placeholder-class="psection" bindinput='inputAuthCode'></input>
+        </view>
+      </view>
+      <view class='footer_pwd'>
+        <image src='/image/icon/icon_pwd_checked.png'></image>
+        <view>
+          <input type='text' name='upwd' password='{{true}}' placeholder="设置用户密码8-16位" placeholder-class="psection" bindinput='inputPwd'></input>
+        </view>
+      </view>
+      <view class='footer_button'>
+        <button size='mini' type='warn' bindtap='register'>立即注册</button>
+      </view>
+    </view>
+    <view class='bottom_img'>
+      <image src='/image/icon/bottom_img.png'></image>
+    </view>
+  </form>
+</view>

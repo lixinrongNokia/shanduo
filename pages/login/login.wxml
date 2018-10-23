@@ -1,0 +1,39 @@
+<!--load.wxml-->
+<view class="container">
+  <form form-type='submit'>
+    <view class='header'>
+      <view class='header_left'>
+        <image src='/image/icon/off_1.png' bindtap='closeLoginView'></image>
+      </view>
+      <view class='header_right'>
+        <text bindtap='onTap'>注册</text>
+      </view>
+    </view>
+    <view class='article'>
+      <image src='/image/icon/portrait.png'></image>
+    </view>
+    <view class='footer'>
+      <view class='footer_name'>
+        <image src='/image/icon/icon_name_checked.png'></image>
+        <view>
+          <input type='text' name='uname' placeholder="手机号 / 闪多号" placeholder-class="psection" bindinput='inputUserId'></input>
+        </view>
+      </view>
+      <view class='footer_pwd'>
+        <image src='/image/icon/icon_pwd_checked.png'></image>
+        <view>
+          <input placeholder="请输入登录密码" placeholder-class="psection" type='text' name='upwd' password='{{true}}' bindinput='inputPwd'></input>
+        </view>
+      </view>
+      <view class='footer_button'>
+        <button size='mini' type='warn' bindtap='userLogin'>立即登录</button>
+      </view>
+      <view class='footer_text'>
+        <text>忘记了密码?</text>
+      </view>
+    </view>
+  </form>
+  <view class='bottom_img'>
+    <image src='/image/icon/bottom_img.png'></image>
+  </view>
+</view>

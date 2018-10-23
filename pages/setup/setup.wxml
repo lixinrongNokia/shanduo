@@ -1,0 +1,20 @@
+<view class='container'>
+  <view class='bg_body'>
+    <view class='nav' bindtap='gotoSecurityView'>
+      <view>
+        <text>账号与安全</text>
+      </view>
+    </view>
+    <view class='nav'>
+      <view>
+        <text>隐私</text>
+      </view>
+    </view>
+    <view class='nav' bindtap='gotoAboutView'>
+      <view>
+        <text>关于</text>
+      </view>
+    </view>
+     <button class='btn' bindtap='logout'>退出登录</button> 
+  </view>
+</view>

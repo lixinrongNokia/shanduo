@@ -1,0 +1,79 @@
+{
+  "pages":[
+    "pages/index/index",
+    "pages/login/login",
+    "pages/register/register",
+    "pages/chat/chat",
+    "pages/launch/launch",
+    "pages/friends/friends",
+    "pages/personal/personal",
+    "pages/release_hd/release_hd",
+    "pages/release_dt/release_dt",
+    "pages/dynamic/dynamic",
+    "pages/mydynamic/mydynamic",
+    "pages/interface/interface",
+    "pages/myactivity/myactivity",
+    "pages/comment/comment",
+    "pages/setup/setup",
+    "pages/wallet/wallet",
+    "pages/vipcore/vipcore",
+    "pages/search/search",
+    "pages/edit/edit",
+    "pages/information/information",
+    "pages/signup/signup",
+    "pages/activityevaluation_fq/activityevaluation_fq",
+    "pages/activityevaluation_cy/activityevaluation_cy",
+    "pages/credit/credit",
+    "pages/security/security",
+    "pages/modify_mm/modify_mm",
+    "pages/modify_zf/modify_zf",
+    "pages/about/about",
+    "pages/record/record",
+    "pages/edit/signature/signature",
+    "pages/edit/nick_edit/nick_edit"
+  ],
+  "window":{
+    "backgroundTextStyle":"dark",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "",
+    "navigationBarTextStyle": "black",
+    "enablePullDownRefresh":true
+  },
+  "tabBar": {
+    "color": "#999999",
+    "selectedColor": "#4660ff",
+    "backgroundColor": "#fefefe",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页",
+        "iconPath": "/image/icon/index.png",
+        "selectedIconPath": "/image/icon/index_1.png"
+      },
+      {
+        "pagePath": "pages/chat/chat",
+        "text": "聊天",
+        "iconPath": "/image/icon/chat.png",
+        "selectedIconPath": "/image/icon/chat_1.png"
+      },
+      {
+        "pagePath": "pages/launch/launch",
+        "text": "发布",
+        "iconPath": "/image/icon/activity.png",
+        "selectedIconPath": "/image/icon/activity.png"
+      },
+      {
+        "pagePath": "pages/friends/friends",
+        "text": "好友",
+        "iconPath": "/image/icon/friends.png",
+        "selectedIconPath": "/image/icon/friends_1.png"
+      },
+      {
+        "pagePath": "pages/personal/personal",
+        "text": "我的",
+        "iconPath": "/image/icon/personal.png",
+        "selectedIconPath": "/image/icon/personal_1.png"
+      }
+    ]
+  }
+}

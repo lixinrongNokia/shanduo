@@ -1,0 +1,95 @@
+<view class='container'>
+  <form bindsubmit=''>
+    <view class='nearby'>
+      <view class='believe'>
+        <view class='inline believe_left'>
+          <image src='{{host}}/picture/{{dynamic.portraitId}}'></image>
+          <view class='inline'>
+            <view>
+              <text>{{dynamic.name}}</text>
+            </view>
+            <view>
+              <text class='{{dynamic.gender=="0"?"sex":"sex_nan"}}'><text wx:if='{{dynamic.gender=="0"}}'>♀</text>
+              <text wx:else>♂</text>{{dynamic.age}}</text>
+              <block wx:if='{{dynamic.vip>0}}'>
+                <text class='level'>{{dynamic.vip}}</text>
+              </block>
+            </view>
+          </view>
+        </view>
+        <view class='inline believe_right'>
+          <!-- <image class='location' src='/image/icon/location.png'></image>
+            <text class='color_ls'>{{dynamic.distance}}</text> -->
+        </view>
+      </view>
+      <view>
+        <text>{{dynamic.content}}</text>
+        <view class='inline'>
+          <block wx:for="{{ dynamic.picture }}" wx:key="navItems" wx:for-item="ite" wx:for-index="index">
+            <!--判断一张图片或者两张图片需放大,加类名 big   -->
+            <image class='{{dynamic.picture.length<2?"big":""}}' src='{{host}}/picture/{{ite}}'></image>
+          </block>
+        </view>
+        <view>
+          <text>{{createDate}}发布</text>
+        </view>
+      </view>
+      <view>
+        <view>
+          <image src='/image/icon/comment_1.png'></image>
+          <text>{{dynamic.dynamicCount}}</text>
+          <image src='/image/icon/fabulous_1.png' bindtap='dynamicPraise'></image>
+          <text>{{dynamic.praise}}</text>
+        </view>
+        <view>
+          <image src='/image/icon/copy.png'></image>
+        </view>
+      </view>
+      <view class='pl_area'>
+        <view class='area_top'>
+          <text>评论区({{commentList.length}})</text>
+        </view>
+        <view class='area_content'>
+          <block wx:for="{{ commentList }}" wx:key="navItems" wx:for-item="item" wx:for-index="index">
+            <view class='inline area_user'>
+              <image src='{{host}}/picture/{{item.portraitId}}'></image>
+              <view class='inline'>
+                <view>
+                  <text>{{item.name}}</text>
+                  <text class='{{item.gender=="0"?"sex":"sex_nan"}}'><text wx:if='{{item.gender=="0"}}'>♀</text>
+                  <text wx:else>♂</text>{{item.age}}</text>
+                </view>
+                <view>
+                  <text>{{item.comment}}</text>
+                </view>
+                  <view>
+                    <view>
+                      <block wx:for='{{item.comments}}' wx:key='indexKey' wx:for-item="comm">
+                        <view>
+                          <text class='txt_title'>{{comm.userName}}@{{comm.replyName}}</text>
+                          <text class='txt_floor'>{{comm.comment}}</text>
+                        </view>
+                      </block>
+                    </view>
+                    <text class='txt_title' data-current="{{item.dynamicId}},{{item.id}},{{item.userId}},{{item.name}}" bindtap='seeComments'>回复量{{item.count}}条></text>
+                  </view>
+                  <view>
+                    <text class='inline'>{{item.createDate}}评论</text>
+                  </view>
+              </view>
+            </view>
+          </block>
+        </view>
+        <view class='area_speak'>
+          <view>
+            <view>
+              <input placeholder="说点啥..." value='{{comments}}' bindinput='inputComments'></input>
+              <button size='mini' type='warn' form-type='submit' bindtap='sendComments'>发送</button>
+            </view>
+            <image src='/image/icon/laugh.png'></image>
+          </view>
+        </view>
+      </view>
+    </view>
+  </form>
+</view>
